@@ -1,0 +1,18 @@
+https:        //localhosts:5000/home
+
+protocal       hostname         route
+
+
+json: java script object notation
+
+get : no data from goes from user
+
+postman: its a popular api testing software ===> https://reqres.in/api/users
+
+==========================
+codes
+==========================
+
+pip install Flask
+
+python3 app.py

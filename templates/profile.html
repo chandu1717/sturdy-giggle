@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container jumbotron" style="background-color: #becde5;">
+    <p style="font-size: 25px"><strong style="font-variant: small-caps;">Name</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{{ user['name'] }}</p>
+    <br>
+    <p style="font-size: 25px"><strong style="font-variant: small-caps;">Username</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{{ user['username'] }}</p>
+    <br>
+    {% if user['prof'] == 1 %}
+        <p style="font-size: 25px"><strong style="font-variant: small-caps;">Profession</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Owner</p>
+    {% elif user['prof'] == 2 %}
+        <p style="font-size: 25px"><strong style="font-variant: small-caps;">Profession</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Receptionist</p>
+    {% elif user['prof'] == 3 %}
+        <p style="font-size: 25px"><strong style="font-variant: small-caps;">Profession</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Trainer</p>
+    {% else %}
+        <p style="font-size: 25px"><strong style="font-variant: small-caps;">Profession</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Member</p>
+    {% endif %}
+    <br>
+    <p style="font-size: 25px"><strong style="font-variant: small-caps;">Phone</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{{ user['phone'] }}</p>
+    <br>
+    <p style="font-size: 25px"><strong style="font-variant: small-caps;">Street</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{{ user['street'] }}</p>
+    <br>
+    <p style="font-size: 25px"><strong style="font-variant: small-caps;">City</strong>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{{ user['city'] }}</p>
+    <br>
+
+    <a href="{{ url_for('edit_profile', username=user['username']) }}" class="btn btn-primary">Edit Profile</a>
+    <a href="{{ url_for('update_password', username=user['username']) }}" class="btn btn-warning">Change Password</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+</div>
+{% endblock %}

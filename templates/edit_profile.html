@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container jumbotron" style="background-color: #becde5;">
+    <h1 style="font-family: Georgia, serif;">Edit Profile</h1>
+    
+    {% if form %}
+    <form method="POST" action="">
+        <div class="form-group">
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.street.label }}<br>
+            {{ form.street(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.city.label }}<br>
+            {{ form.city(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.phone.label }}<br>
+            {{ form.phone(class="form-control") }}
+        </div>
+        <p><input type="submit" class="btn btn-primary" value="Update"></p>
+    </form>
+    {% else %}
+        <p class="text-danger">Form not loaded correctly!</p>
+    {% endif %}
+
+    <a href="{{ url_for('profile', username=session['username']) }}" class="btn btn-secondary">Back to Profile</a>
+</div>
+{% endblock %}
