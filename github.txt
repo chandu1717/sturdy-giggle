@@ -2,6 +2,8 @@
 command
 ==================================
 
+git add .; git coomit -m "practice shell script"; git push origin master
+
 git - git is a opensource software
 
 github - github is a used to store git content 
@@ -16,7 +18,29 @@ git add .
 
 git commit -m "first commit"
 
+git log
+
 git push -u origin main
 
 git push -u origin master ===> -u stands for upstream which allows you to link local baranch to remote baranch
 
+ls -a
+
+git status
+
+git restore --staged "file-name"
+
+git diff "commit id"
+
+git rest --hard "commit id"
+
+
+shh-keygen -t rsa -b 4096 -c "github gmail"
+
+eval "$(ssh-agent -s)"
+
+cat ~/.ssh/id_rsa.pub
+
+copy and paste ssh key in setiing-ssh github/gitlab 
+
+git push --set-upstream origin master
